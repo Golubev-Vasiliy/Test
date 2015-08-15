@@ -7,13 +7,18 @@ public class ELegion {
         if(args.length==2)      //Проверка на кол-во передаваемых аргументов
         {
             int Mas[][];
-            int N, c;                      //Кол-во строк
+            int N=0, c, k=0;                      //Кол-во строк
             File f1 = new File(args[0]);
             FileReader Input = new FileReader(f1);
-            while((c=Input.read())!=-1) System.out.print((char) c);
+            while((c=Input.read())!=-1) 
+            {
+                System.out.print((char)c);
+                if (c==10) N++;
+            }
+            System.out.print("Строк считано - " + N + "\n");
             System.out.printf("%s\n", args[0]);
             System.out.printf("%s\n", args[1]);
-            Mas = new int[N=99][3];       //Mas[N][x1, y1, x2, y2]           
+            Mas = new int[N][3];       //Mas[N][x1, y1, x2, y2]    
         }
         else
             System.out.print("Ошибка!\nКоличество передаваемых аргументов должно быть 2 ");
